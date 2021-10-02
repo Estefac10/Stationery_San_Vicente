@@ -62,6 +62,19 @@ function SellersInfo() {
       apellido: "Ruiz",
       estado: ""
     },
+    {
+      id: 9,
+      nombre: "Sofia",
+      apellido: "Castro",
+      estado: ""
+    },
+    {
+      id: 10,
+      nombre: "Carolina",
+      apellido: "Cardona",
+      estado: ""
+    },
+    
   ] 
 
   return (
