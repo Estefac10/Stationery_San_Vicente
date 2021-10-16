@@ -41,7 +41,6 @@ class AgregarVentas extends Component{
             
           });
         
-        
       }
     
       handleChange(e) {
@@ -72,7 +71,9 @@ class AgregarVentas extends Component{
             .then(res => res.json())
             
             .then(data => {
+
               this.setState({_id: '',producto: '', cliente: '',idCliente:'',vendedor:'',precio:'',cantidad:''});
+
               this.fetchTasks();
             });
             swal({
@@ -105,7 +106,9 @@ class AgregarVentas extends Component{
                 
               });
               
+
               this.setState({producto: '', cliente: '',idCliente:'',vendedor:'',precio:'',cantidad:''});
+
               this.fetchTasks();
             })
             .catch(err => console.error(err));
@@ -120,7 +123,9 @@ class AgregarVentas extends Component{
             this.setState({
               producto: data.producto,
               cliente: data.cliente,
+
               idCliente:data.idCliente,
+
               vendedor: data.vendedor,
               precio: data.precio,
               cantidad: data.cantidad,
@@ -170,6 +175,7 @@ class AgregarVentas extends Component{
           const itemDataClien = item.cliente.toUpperCase()
           const itemDataVend = item.vendedor.toUpperCase()
           const itemIDCliente=item.idCliente
+          
           const itemID=item._id.toUpperCase()
           const campo = itemDataClien+" " + itemDataVend+ " "+itemIDCliente+" "+itemID
           const textData = text.toUpperCase()
@@ -279,7 +285,8 @@ class AgregarVentas extends Component{
   
   </div>
             <div className="search">    
-            <input class="form-control"  placeholder="Buscar..." value={this.state.text} onChange={(text) => this.filter(text)}/>
+
+            <input class="form-control"  placeholder="Buscar por cliente, ID cliente o id venta" value={this.state.text} onChange={(text) => this.filter(text)}/>
             </div>
   <Table striped bordered hover>
             <thead>
