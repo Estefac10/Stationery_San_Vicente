@@ -53,7 +53,7 @@ class AgregarVentas extends Component{
       addSell(e) {
         e.preventDefault();
         if(this.state._id) {
-          fetch(`http://localhost:3002/api/ventas/${this.state._id}`, {
+          fetch(`https://stationary-san-vicent-backend.herokuapp.com/api/ventas/${this.state._id}`, {
             method: 'PUT',
             body: JSON.stringify({
               producto: this.state.producto,
@@ -86,7 +86,7 @@ class AgregarVentas extends Component{
             });
             
         } else {
-          fetch('http://localhost:3002/api/ventas', {
+          fetch('https://stationary-san-vicent-backend.herokuapp.com/api/ventas', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
@@ -116,7 +116,7 @@ class AgregarVentas extends Component{
     
       }
       editSell(id) {
-        fetch(`http://localhost:3002/api/ventas/${id}`)
+        fetch(`https://stationary-san-vicent-backend.herokuapp.com/api/ventas/${id}`)
           .then(res => res.json())
           .then(data => {
             console.log(data);
@@ -152,7 +152,7 @@ class AgregarVentas extends Component{
             )
           }
         })) {
-          fetch(`http://localhost:3002/api/ventas/${id}`, {
+          fetch(`https://stationary-san-vicent-backend.herokuapp.com/api/ventas/${id}`, {
             method: 'DELETE',
             headers: {
               'Accept': 'application/json',
@@ -193,7 +193,7 @@ class AgregarVentas extends Component{
       }
     
       fetchTasks() {
-        fetch(`http://localhost:3002/api/ventas`)
+        fetch(`https://stationary-san-vicent-backend.herokuapp.com/api/ventas`)
           .then(res => res.json())
           .then(data => {
             this.setState({ventas: data,

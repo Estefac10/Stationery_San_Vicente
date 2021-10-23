@@ -21,7 +21,7 @@ function ListProducts() {
         console.error(err);
       });
   }, []);
-
+  
   const borrarProducto = (id) => {
     Swal.fire({
       title: "¿Esta seguro?",
